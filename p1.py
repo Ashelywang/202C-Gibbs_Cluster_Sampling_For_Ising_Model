@@ -234,13 +234,13 @@ def PlotGibbs(beta, htarget, epsilon, version,annotate=True):
     if version == 1:
         H1, A1, i1 = a.Gibbs_cluster(100, htarget, epsilon)
     elif version == 2:
-        H1, A1, S1, i1 = a.Gibbs_cluster2(100, htarget, epsilon)
+        H1, A1, S1, i1 = a.Gibbs_cluster2(2000, htarget, epsilon)
     a = Board(64, beta)
     a.become_checkerboard()
     if version == 1:
         H2, A2, i2 = a.Gibbs_cluster(100, htarget, epsilon)
     elif version == 2:
-        H2, A2, S2, i2 = a.Gibbs_cluster2(1700, htarget, epsilon)
+        H2, A2, S2, i2 = a.Gibbs_cluster2(2700, htarget, epsilon)
     if version == 1:
         plt.figure()
         plt.plot(range(i1 + 1), H1[0, 0:(i1 + 1)], linestyle='-', marker='o')
